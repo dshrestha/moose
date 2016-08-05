@@ -1,0 +1,12 @@
+<div class="panel-heading" role="tab" id="{{unbound headingId}}">
+    <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#{{unbound groupId}}" href="#{{unbound bodyId}}" aria-expanded="{{unbound expanded}}" aria-controls="{{unbound bodyId}}">
+            {{headerText}}
+        </a>
+    </h4>
+</div>
+<div id="{{unbound bodyId}}" class="panel-collapse collapse {{if expanded "in"}}" role="tabpanel" aria-labelledby="{{unbound headingId}}">
+    <div class="panel-body">
+        {{yield}}
+    </div>
+</div>

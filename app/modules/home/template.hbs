@@ -1,0 +1,34 @@
+<div class="m-y-6">
+    <h3 class="text-center grey-dotted-border-bottom">HI THERE</h3>
+    <div class="clearfix">
+        <img src="assets/images/profile_pic.jpg" class="simple-border-1 pull-left m-r-5"/>
+        <p>
+            Let me introduce myself to you first, I am Deewendra Shrestha(or Dee for short) a software engineer by profession.
+            Programming has been my hobby since very beginning and I am lucky enough to be able to continue it as a profession too.
+            You will find plenty about my professional/personal life here so I will refrain from spilling any details here for now.
+            In my spare time I tend to work on my "basement" projects - improving on old codes(and bash myself for how poorly I wrote them)
+            and fooling around with new languages or gang up with folks for some <a href="http://www.teamfortress.com" target="_blank">TF2</a> madness.
+            I have been trying to ski for a while now and personally I think <strong>pizza</strong> is a scam. Oh and sometimes I like to google
+            <a href="http://www.google.com/search?btnG=1&amp;pws=0&amp;q=best+personal+website" target="_blank">"best personal websites"</a>
+            and then drool on the work of amazing web designers - true story.
+        </p>
+    </div>
+</div>
+<div class="clearfix m-y-6">
+    <h3 class="text-center grey-dotted-border-bottom">TIMELINE</h3>
+    <div class="well">
+      {{time-line data=model.timeLineData timeLineFocusId=timeLineFocusId}}
+    </div>
+</div>
+<div class="clearfix m-y-6">
+    <div class="row">
+      {{experience.show-experiences experiences=model.experiences setTimeLineFocus="setTimeLineFocus"}}
+    </div>
+
+</div>
+<div class="clearfix m-y-6">
+    <h3 class="text-center grey-dotted-border-bottom">TECHNICAL</h3>
+    <div class="well">
+      {{d3-sun-burst data=model.technologiesUsed}}
+    </div>
+</div>

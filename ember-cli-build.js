@@ -2,9 +2,14 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    sassOptions: {
+      includePaths: [
+        'bower_components/bootstrap-sass/assets/stylesheets'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -20,5 +25,31 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  var importBootstrap = function () {
+    app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
+  };
+  var importD3 = function () {
+    app.import('bower_components/d3/d3.js');
+  };
+  var importTimeLine = function () {
+    app.import("bower_components/timelineJs/compiled/js/timeline.js");
+    app.import("bower_components/timelineJs/compiled/css/timeline.css");
+    app.import('bower_components/timelineJs/compiled/css/icons/tl-icons.eot', {
+      destDir: 'assets/icons'
+    });
+    app.import('bower_components/timelineJs/compiled/css/icons/tl-icons.svg', {
+      destDir: 'assets/icons'
+    });
+    app.import('bower_components/timelineJs/compiled/css/icons/tl-icons.ttf', {
+      destDir: 'assets/icons'
+    });
+    app.import('bower_components/timelineJs/compiled/css/icons/tl-icons.woff', {
+      destDir: 'assets/icons'
+    });
+  };
+
+  importBootstrap();
+  importTimeLine();
+  importD3();
   return app.toTree();
 };

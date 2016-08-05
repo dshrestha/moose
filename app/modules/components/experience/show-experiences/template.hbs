@@ -1,0 +1,6 @@
+<div class="col-md-6 experience-container">
+  {{experience.show-roles experiences=experiences selectedExperience=selectedExperience setSelectedExperience=(action "setSelectedExperience")}}
+</div>
+<div class="col-md-6">
+  {{experience.show-projects experience=selectedExperience}}
+</div>
