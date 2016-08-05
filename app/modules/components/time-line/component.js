@@ -40,7 +40,7 @@ export default Ember.Component.extend({
     Ember.$(window).off('resize', this.resizeTimeline);
   },
 
-  didReceiveAttrs() {
+  didUpdateAttrs () {
     this._super(...arguments);
     if (this.get('timeLineFocusId')) {
       this.send('goToId', this.get('timeLineFocusId'));
