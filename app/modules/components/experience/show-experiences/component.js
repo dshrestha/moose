@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 
   actions: {
 
-    setSelectedExperience: function (experience) {
+    setSelectedExperience (experience) {
       this.set('selectedExperience', experience);
       this.sendAction("setTimeLineFocus", experience);
     }
