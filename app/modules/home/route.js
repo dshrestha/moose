@@ -489,6 +489,13 @@ export default Ember.Route.extend({
                 'Contributed to the in-house d3 charting library to simplify generating and extending generic shapes to create interactive charts',
                 'Solved the short comings of capturing screen in the client side by creating a server side screen capturing tool using nodejs and phantomjs'
               ]
+            }, {
+              'name': 'ACT',
+              'roles': [
+                'Overcame the short comings of client side screen capture tool(font issues, inconsistent output based on browser, incorrect SVG capture etc.) by ' +
+                'designing and developing a server side screen capturing solution using NodeJS server and phantomJS',
+                'Implemented and added easily configurable analytics/security/logging measures to consume and analyze the service usages'
+              ]
             }
           ]
         },

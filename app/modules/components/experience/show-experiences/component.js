@@ -27,6 +27,7 @@ export default Ember.Component.extend({
       this.set('selectedExperience', experience);
       let projectTab = this.get('tabs').findBy('label', 'Projects');
       Ember.set(projectTab, 'badge', Ember.get(experience, 'projects.length'));
+      this.get('setTimeLineFocus')(experience);
     },
 
     onTabClick(option){

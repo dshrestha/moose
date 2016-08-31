@@ -1,5 +1,5 @@
 <div class="m-y-6">
-    <h3 class="text-center grey-dotted-border-bottom">HI THERE</h3>
+    <h3 class="grey-dotted-border-bottom">INTRO</h3>
     <div class="clearfix">
         <img src="assets/images/profile_pic.jpg" class="simple-border-1 pull-left m-r-5"/>
         <p>
@@ -23,19 +23,19 @@
     </div>
 </div>
 <div class="clearfix m-y-6">
-    <h3 class="text-center grey-dotted-border-bottom">TIMELINE</h3>
+    <h3 class="grey-dotted-border-bottom">TIMELINE</h3>
     <div class="well">
       {{time-line data=model.timeLineData timeLineFocusId=timeLineFocusId}}
     </div>
 </div>
 <div class="clearfix m-y-6">
+    <h3 class="grey-dotted-border-bottom">EXPERIENCE / ROLES</h3>
     <div class="row">
-      {{experience.show-experiences experiences=model.experiences setTimeLineFocus="setTimeLineFocus"}}
+      {{experience.show-experiences experiences=model.experiences setTimeLineFocus=(route-action "setTimeLineFocus")}}
     </div>
-
 </div>
 <div class="clearfix m-y-6">
-    <h3 class="text-center grey-dotted-border-bottom">TECHNICAL</h3>
+    <h3 class="grey-dotted-border-bottom">TECHNICAL</h3>
     <div class="well">
       {{d3-sun-burst data=model.technologiesUsed}}
     </div>
