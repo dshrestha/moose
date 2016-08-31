@@ -62,3 +62,22 @@ p {
     text-overflow: ellipsis;
   }
 }
+
+.tab-pane {
+  margin: 10px;
+  min-height: 100px;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.nav-tabs {
+  margin: 0;
+}
+
+.tab-content {
+  height: 100%;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}

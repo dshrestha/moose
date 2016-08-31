@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+  {{#each tabs as |tab|}}
+      <li class="{{if (check-eq tab selectedTab) "active"}}"><a href="#" {{action "onTabClick" tab}}>{{tab.label}} {{#if tab.badge}}<span class="badge">{{tab.badge}}</span>{{/if}}</a></li>
+  {{/each}}
+</ul>
+<div class="tab-content">
+{{yield this}}
+</div>

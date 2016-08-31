@@ -1,0 +1,15 @@
+{{#each model as |album|}}
+    <div class="album-intro">
+        <div class="clearfix grey-dotted-border-bottom">
+            <div class="pull-left"><h3>{{moment-format album.uploadDate "LL"}}</h3></div>
+            <h1 class="pull-right"><span>{{album.name}} </span></h1>
+        </div>
+        <div class="clearfix p-y-4 ">
+            <div class="pull-left" style="padding-right: 25px;"><img src="/assets/images/albums/{{unbound album.id}}/thumb/{{unbound album.coverPhoto}}" class="simple-border-1 drop-shadow pointer-cursor" {{action 'selectAlbum' album}} /></div>
+            {{#each album.description as |paragraph|}}
+              <p>{{paragraph}}</p>
+            {{/each}}
+        </div>
+    </div>
+    <br />
+{{/each}}

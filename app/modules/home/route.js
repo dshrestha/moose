@@ -82,7 +82,7 @@ export default Ember.Route.extend({
             "background": {
               "color": "#677077",
               "opacity": 50,
-              "url": null
+              "url": "assets/images/timeline/schooling-2.jpg"
             },
             "start_date": {
               "year": "2000",
@@ -106,7 +106,6 @@ export default Ember.Route.extend({
               "thumbnail": "",
               "format": ""
             },
-            "background": {"url": "assets/images/timeline/schooling-2.jpg"},
             "text": {
               "headline": "Proficiency Certificate In Science(Physics)",
               "text": 'I did 2 more years of schooling at "Viswa Niketan Sciecne Campus"'
@@ -155,9 +154,8 @@ export default Ember.Route.extend({
             "group": "Education"
           }, {
             "background": {
-              "color": "#8bc34a",
               "opacity": 50,
-              "url": null
+              "url": "assets/images/timeline/schooling-4.jpg"
             },
             "start_date": {
               "year": "2010",
@@ -181,7 +179,6 @@ export default Ember.Route.extend({
               "thumbnail": "",
               "format": ""
             },
-            "background": {"url": "assets/images/timeline/schooling-4.jpg"},
             "text": {
               "headline": "Master Of Science In Computer Science",
               "text": 'Did my masters in computer science from <a href="http://www.mum.edu/index.html" target="_blank">Maharishi University Of Management</a> and this was the place ' +
@@ -194,9 +191,8 @@ export default Ember.Route.extend({
             "group": "Education"
           }, {
             "background": {
-              "color": "#8bc34a",
               "opacity": 50,
-              "url": null
+              "url": "assets/images/company-logo/worldlink.gif"
             },
             "start_date": {
               "year": "2006",
@@ -220,7 +216,6 @@ export default Ember.Route.extend({
               "thumbnail": "",
               "format": ""
             },
-            "background": {"url": "assets/images/company-logo/worldlink.gif"},
             "text": {
               "headline": "SPI Nepal (Formerly Worldlink Technologies Pvt. Ltd.) - Software Engineer",
               "text": 'WorldLink is an experienced software solutions provider with extensive experience in consulting, development and implementation of enterprise applications in areas of ERP, CRM, HRM, Payroll and Pensions. Our experience covers a wide range of industry and market sectors that include government, telecom, BFSI and private businesses. Our services include consulting, application development, product management and maintenance, enterprise application implementation, integration, quality assurance and testing.'
@@ -230,9 +225,8 @@ export default Ember.Route.extend({
             "group": "Work"
           }, {
             "background": {
-              "color": "#8bc34a",
               "opacity": 50,
-              "url": null
+              "url": "assets/images/company-logo/innovate.gif"
             },
             "start_date": {
               "year": "2010",
@@ -256,7 +250,6 @@ export default Ember.Route.extend({
               "thumbnail": "",
               "format": ""
             },
-            "background": {"url": "assets/images/company-logo/innovate.gif"},
             "text": {
               "headline": "Innovate! Inc. - Software Engineer",
               "text": 'Innovate! is an 8(a) certified, “green” business providing geospatial solutions, software engineering, IT security services, management consulting and transformation consulting services. We are passionate about and live consistent with taking care of the planet. Our primary clients are EPA, USGS, USDA, and many state, tribal and US territory environmental departments. Our focus is to drive efficiencies and business results through innovative consulting techniques IT solutions.'
@@ -266,9 +259,8 @@ export default Ember.Route.extend({
             "group": "Work"
           }, {
             "background": {
-              "color": "#8bc34a",
               "opacity": 50,
-              "url": null
+              "url": "assets/images/company-logo/wayfair.jpg"
             },
             "start_date": {
               "year": "2011",
@@ -292,7 +284,6 @@ export default Ember.Route.extend({
               "thumbnail": "",
               "format": ""
             },
-            "background": {"url": "assets/images/company-logo/wayfair.jpg"},
             "text": {
               "headline": "Wayfair, LLC. - Software Engineer",
               "text": 'Wayfair is a leader in the ecommerce space for things for the home (couches, end tables, lamps, and literally 3.1 million other items) and #51 overall in the ecommerce rankings(2011).'
@@ -302,9 +293,8 @@ export default Ember.Route.extend({
             "group": "Work"
           }, {
             "background": {
-              "color": "#8bc34a",
               "opacity": 50,
-              "url": null
+              "url": "assets/images/company-logo/innovate.gif"
             },
             "start_date": {
               "year": "2012",
@@ -328,7 +318,6 @@ export default Ember.Route.extend({
               "thumbnail": "",
               "format": ""
             },
-            "background": {"url": "assets/images/company-logo/innovate.gif"},
             "text": {
               "headline": "Innovate! Inc. - Software Engineer",
               "text": 'Innovate! is an 8(a) certified, “green” business providing geospatial solutions, software engineering, IT security services, management consulting and transformation consulting services. We are passionate about and live consistent with taking care of the planet. Our primary clients are EPA, USGS, USDA, and many state, tribal and US territory environmental departments. Our focus is to drive efficiencies and business results through innovative consulting techniques IT solutions.'
@@ -338,9 +327,8 @@ export default Ember.Route.extend({
             "group": "Work"
           }, {
             "background": {
-              "color": "#ffc107",
               "opacity": 50,
-              "url": null
+              "url": "assets/images/company-logo/nielsen.png"
             },
             "start_date": {
               "year": "2013",
@@ -364,7 +352,6 @@ export default Ember.Route.extend({
               "thumbnail": "",
               "format": ""
             },
-            "background": {"url": "assets/images/company-logo/nielsen.png"},
             "text": {
               "headline": "Nielsen - Senior Software Engineer",
               "text": 'Nielsen is a leading global information and measurement company that enables companies to understand consumers and consumer behavior. Nielsen measures and monitors what consumers watch (programming, advertising) and what consumers buy (categories, brands, products) on a global and local basis. The company has a presence in approximately 100 countries spread across Africa, Asia, Australia, Europe, Middle East, North America, South America and Russia.'
@@ -373,7 +360,6 @@ export default Ember.Route.extend({
             "unique_id": "work-5",
             "group": "Work"
           }
-
         ]
       });
     });
@@ -397,7 +383,8 @@ export default Ember.Route.extend({
             {"name": "Groovy"},
             {"name": "Java", "children": [{"name": "JSP"}, {"name": "Servlets"}]},
             {"name": "PHP", "children": [{"name": "Codeigniter"}, {"name": "Drupal"}]},
-            {"name": "Python"}
+            {"name": "Python"},
+            {"name": "NodeJS", "children": [{"name": "Express"}]}
           ]
         },
         {
@@ -471,7 +458,7 @@ export default Ember.Route.extend({
             }
           ]
         }
-      ])
+      ]);
     });
   },
 
@@ -493,6 +480,14 @@ export default Ember.Route.extend({
               'name': 'HUGS',
               'roles': [
                 'Was part of core engineering team to develop survey programming application for Nielsen, that significantly brought down the time an analyst takes to program a survey thereby saving large amount of time and cost involved in programming these surveys'
+              ]
+            },
+            {
+              'name': 'Automated Interactive Report',
+              'roles': [
+                'Devised robust architecture to support modularized reporting system',
+                'Contributed to the in-house d3 charting library to simplify generating and extending generic shapes to create interactive charts',
+                'Solved the short comings of capturing screen in the client side by creating a server side screen capturing tool using nodejs and phantomjs'
               ]
             }
           ]

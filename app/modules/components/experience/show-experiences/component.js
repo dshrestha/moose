@@ -4,16 +4,43 @@ export default Ember.Component.extend({
 
   selectedExperience: null,
 
+  tabs: null,
+
+  showRole: true,
+
+  showProjects: false,
+
   init() {
     this._super(...arguments);
-    this.set('selectedExperience', this.get('experiences.firstObject'));
+    let selectedExperience = this.get('experiences.firstObject')
+    this.set('selectedExperience', selectedExperience);
+    this.set('tabs', [{'label': 'Role'}, {
+      'label': 'Projects',
+      'badge': Ember.get(selectedExperience, 'projects.length')
+    }]);
   },
+
 
   actions: {
 
-    setSelectedExperience (experience) {
+    selectExperience (experience) {
       this.set('selectedExperience', experience);
-      this.sendAction("setTimeLineFocus", experience);
+      let projectTab = this.get('tabs').findBy('label', 'Projects');
+      Ember.set(projectTab, 'badge', Ember.get(experience, 'projects.length'));
+    },
+
+    onTabClick(option){
+      if (Ember.get(option, 'label') === 'Role') {
+        this.setProperties({
+          showRole: true,
+          showProjects: false
+        });
+      } else {
+        this.setProperties({
+          showRole: false,
+          showProjects: true
+        });
+      }
     }
   }
 

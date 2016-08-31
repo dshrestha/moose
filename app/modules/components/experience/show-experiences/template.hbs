@@ -1,6 +1,21 @@
-<div class="col-md-6 experience-container">
-  {{experience.show-roles experiences=experiences selectedExperience=selectedExperience setSelectedExperience=(action "setSelectedExperience")}}
-</div>
-<div class="col-md-6">
-  {{experience.show-projects experience=selectedExperience}}
+<div class="clearfix m-y-6">
+    <h3 class="grey-dotted-border-bottom">EXPERIENCE / ROLES</h3>
+    <div class="row">
+        <div class="col-md-4 experience-container">
+            <ul class="nav nav-pills nav-stacked">
+              {{#each experiences as |experience|}}
+                  <li role="presentation" class="{{if (check-eq experience selectedExperience) "active"}}"><a href="#" {{action "selectExperience" experience}}>{{experience.companyName}}</a></li>
+              {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-8">
+            {{#nav-tabs tabs=tabs onTabClick=(action "onTabClick")}}
+              {{#if showRole}}
+                {{experience.show-roles experience=selectedExperience}}
+              {{else}}
+                  {{experience.show-projects experience=selectedExperience}}
+              {{/if}}
+            {{/nav-tabs}}
+        </div>
+    </div>
 </div>

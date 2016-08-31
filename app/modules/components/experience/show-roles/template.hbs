@@ -1,12 +1,5 @@
-<h3 class="text-center grey-dotted-border-bottom">EXPERIENCE / ROLE</h3>
-{{#accordion.ui-group as |group|}}
-  {{#each experiences as |experience|}}
-    {{#accordion.ui-panel groupId=group.elementId headerText=experience.companyName expanded=(check-eq selectedExperience experience) shown=(action attrs.setSelectedExperience experience)}}
-        <ul>
-            {{#each experience.roles as |role|}}
-                <li>{{role}}</li>
-            {{/each}}
-        </ul>
-    {{/accordion.ui-panel}}
-  {{/each}}
-{{/accordion.ui-group}}
+<ul>
+    {{#each experience.roles as |role|}}
+        <li>{{role}}</li>
+    {{/each}}
+</ul>

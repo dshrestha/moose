@@ -36,7 +36,6 @@ export default Ember.Component.extend({
   },
 
   willDestroyElement() {
-    delete this.get('timeLineInstance');
     Ember.$(window).off('resize', this.resizeTimeline);
   },
 
