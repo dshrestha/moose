@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
+  classNames: ['experience-container'],
+
   selectedExperience: null,
 
   tabs: null,

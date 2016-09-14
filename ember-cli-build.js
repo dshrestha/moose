@@ -47,9 +47,15 @@ module.exports = function (defaults) {
       destDir: 'assets/icons'
     });
   };
+  var importPerfectScrollbar = function () {
+    app.import("bower_components/perfect-scrollbar/js/perfect-scrollbar.js");
+    app.import("bower_components/perfect-scrollbar/css/perfect-scrollbar.css");
+  };
 
   importBootstrap();
   importTimeLine();
   importD3();
+  importPerfectScrollbar();
+
   return app.toTree();
 };

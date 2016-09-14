@@ -6,8 +6,8 @@
     "ember-qunit-notifications": "0.1.0",
     "bootstrap-sass": "~3.3.6",
     "timelineJs": "https://github.com/NUKnightLab/TimelineJS3.git",
-    "d3": "~3.5.13"
+    "d3": "~3.5.13",
+    "perfect-scrollbar": "~0.6.12"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
