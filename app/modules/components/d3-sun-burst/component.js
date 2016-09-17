@@ -7,7 +7,7 @@ export default Ember.Component.extend({
 
   classNames: ['text-center'],
 
-  didInsertElement: function () {
+  draw(){
     var color = d3.scale.category20c(),
       t = function (n, e) {
         return n === e ? !0 : n.children ? n.children.some(function (n) {
@@ -37,7 +37,7 @@ export default Ember.Component.extend({
         return .299 * t.r + .587 * t.g + .114 * t.b
       };
 
-    var i = 550,
+    var i = Ember.$("#moose-container").width() * .75,
       l = i,
       o = i / 2,
       d = d3.scale.linear().range([0, 2 * Math.PI]),
@@ -150,5 +150,9 @@ export default Ember.Component.extend({
     text.append("tspan").attr("x", 0).attr("dy", "1em").text(function (t) {
       return t.depth ? t.name.split(" ")[1] || "" : ""
     });
+  },
+
+  didInsertElement() {
+    this.draw();
   }
 });

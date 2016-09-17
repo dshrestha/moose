@@ -34,6 +34,23 @@
   margin-right: ($spacer-x * 3) !important;
 }
 
+
+.m-l-1 {
+  margin-left: $spacer-x !important;
+}
+
+.m-l-2 {
+  margin-left: ($spacer-x * 1.5) !important;
+}
+
+.m-l-3 {
+  margin-left: ($spacer-x * 2) !important;
+}
+
+.m-l-4 {
+  margin-left: ($spacer-x * 2.5) !important;
+}
+
 .m-y-4 {
   margin-top: ($spacer-y * 2.5) !important;
   margin-bottom: ($spacer-y * 2.5) !important;
