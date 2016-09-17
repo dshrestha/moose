@@ -4,9 +4,9 @@ import config from './../../../config/environment';
 
 export default Ember.Component.extend(EmberValidations, {
 
-  messageSentSuccess: true,
+  messageSentSuccess: false,
 
-  messageSentFailure: true,
+  messageSentFailure: false,
 
   showErrors: false,
 
