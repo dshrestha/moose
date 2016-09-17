@@ -79,10 +79,6 @@ export default Ember.Component.extend(EmberValidations, {
       }).catch(()=> {
         console.log(this.get('isValid'));
       });
-    },
-
-    test(){
-      console.log("called");
     }
 
   }
