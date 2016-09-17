@@ -1,0 +1,37 @@
+{{#if messageSentSuccess}}
+  {{#bootstrap-alert type="success"}}
+      Message was sent successfully, thank you for your feedback.
+  {{/bootstrap-alert}}
+{{/if}}
+{{#if messageSentFailure}}
+  {{#bootstrap-alert type="danger"}}
+      Something went wrong, we were unable to send the message. You may contact me directly at deewendra.shrestha@gmail.com
+  {{/bootstrap-alert}}
+{{/if}}
+<h1 class="grey-dotted-border-bottom">SPEAK YOUR MIND</h1>
+<form>
+    <div class="form-group {{if (do-and showErrors errors.name.length) 'has-error'}}">
+        <label>Your name</label>
+      {{input placeholder="" class="form-control" value=name}}
+        <span class="text-danger">{{#if showErrors}}{{errors.name.firstObject}}{{/if}}</span>
+    </div>
+    <div class="form-group {{if (do-and showErrors errors.email.length) 'has-error'}}">
+        <label>Your email address</label>
+      {{input placeholder="" class="form-control" value=email}}
+        <span class="text-danger">{{#if showErrors}}{{errors.email.firstObject}}{{/if}}</span>
+    </div>
+    <div class="form-group {{if (do-and showErrors errors.message.length) 'has-error'}}">
+        <label>Your message</label>
+      {{textarea placeholder="" class="form-control" value=message rows=8}}
+        <span class="text-danger">{{#if showErrors}}{{errors.message.firstObject}}{{/if}}</span>
+    </div>
+    <div class="form-group {{if (do-and showErrors errors.captcha.length) 'has-error'}}">
+        <label>Enter code shown</label>
+        <div class="clearfix">
+            <div class="pull-left">{{input placeholder="" class="form-control" value=captcha}}</div>
+            <div class="pull-left"><img src="{{captchaImageLink}}"/></div>
+        </div>
+        <span class="text-danger">{{#if showErrors}}{{errors.captcha.firstObject}}{{/if}}</span>
+    </div>
+    <button type="submit" class="btn btn-primary pull-right" {{action 'submitFeedback'}}>Send</button>
+</form>

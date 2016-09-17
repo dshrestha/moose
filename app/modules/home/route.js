@@ -108,7 +108,7 @@ export default Ember.Route.extend({
             },
             "text": {
               "headline": "Proficiency Certificate In Science(Physics)",
-              "text": 'I did 2 more years of schooling at "Viswa Niketan Sciecne Campus"'
+              "text": 'I did 2 more years of schooling at "Viswa Niketan Science Campus"'
             },
             "unique_id": "",
             "group": "Education"
