@@ -54,6 +54,7 @@ export default Ember.Component.extend(EmberValidations, {
         'name': '',
         'email': '',
         'message': '',
+        'captcha': '',
         'showErrors': false
       });
       this.notifyPropertyChange('resetCaptcha');
