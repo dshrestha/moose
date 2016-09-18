@@ -76,7 +76,6 @@ export default Ember.Component.extend(EmberValidations, {
         'messageSentFailure': false
       });
     }).catch(()=> {
-      alert("error in send email");
       this.setProperties({
         'messageSentSuccess': false,
         'messageSentFailure': true
@@ -106,10 +105,6 @@ export default Ember.Component.extend(EmberValidations, {
         this.verifyCaptcha(this.get('captcha')).then(()=> {
           this.sendEmail();
         }).catch((jqXHR, textStatus, errorThrown)=> {
-          alert(textStatus);
-          alert(errorThrown);
-          console.log(textStatus);
-          console.log(errorThrown);
           this.notifyPropertyChange('resetCaptcha');
           this.set('errors.captcha', ["Captcha didn't match please try again"]);
         });
