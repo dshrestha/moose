@@ -38,13 +38,45 @@ export default Ember.Component.extend(EmberValidations, {
 
   },
 
-  _sendEmail(){
-    this.attrs.sendEmail(this.get('name'), this.get('email'), this.get('message')).then(()=> {
+  /**
+   * Makes api call which in turns sends an email.
+   *
+   * @method 'sendEmail'
+   * @param {String} name
+   * @param {String} email address of the sender
+   * @param {String} message
+   * @return {Ember.RSVP.Promise}
+   * */
+  sendEmailToMe(name, email, message){
+    return new Ember.RSVP.Promise(function (resolve, reject) {
+      Ember.$.ajax({
+        url: `${config.APP.API_URL}/mailer`,
+        method: 'POST',
+        data: {
+          'from': email,
+          'to': 'quaint.stranger@gmail.com',
+          'subject': `dshrestha.herokuapp.com : Message from ${name}`,
+          'message': message
+        },
+        xhrFields: {
+          withCredentials: true
+        }
+      }).done(()=> {
+        resolve();
+      }).error(()=> {
+        reject();
+      });
+    });
+  },
+
+  sendEmail(){
+    this.sendEmailToMe(this.get('name'), this.get('email'), this.get('message')).then(()=> {
       this.setProperties({
         'messageSentSuccess': true,
         'messageSentFailure': false
       });
     }).catch(()=> {
+      alert("error");
       this.setProperties({
         'messageSentSuccess': false,
         'messageSentFailure': true
@@ -72,13 +104,12 @@ export default Ember.Component.extend(EmberValidations, {
       this.clearValidationErrors();
       this.validate().then(()=> {
         this.verifyCaptcha(this.get('captcha')).then(()=> {
-          this._sendEmail();
+          this.sendEmail();
         }).catch(()=> {
+          alert("error");
           this.notifyPropertyChange('resetCaptcha');
           this.set('errors.captcha', ["Captcha didn't match please try again"]);
         });
-      }).catch(()=> {
-        console.log(this.get('isValid'));
       });
     }
 
