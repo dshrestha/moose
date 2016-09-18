@@ -76,7 +76,7 @@ export default Ember.Component.extend(EmberValidations, {
         'messageSentFailure': false
       });
     }).catch(()=> {
-      alert("error");
+      alert("error in send email");
       this.setProperties({
         'messageSentSuccess': false,
         'messageSentFailure': true
