@@ -31,8 +31,8 @@ export default Ember.Component.extend(EmberValidations, {
         }
       }).done(()=> {
         resolve();
-      }).error(()=> {
-        reject();
+      }).error((jqXHR, textStatus, errorThrown)=> {
+        reject(jqXHR, textStatus, errorThrown);
       });
     });
 
@@ -105,8 +105,11 @@ export default Ember.Component.extend(EmberValidations, {
       this.validate().then(()=> {
         this.verifyCaptcha(this.get('captcha')).then(()=> {
           this.sendEmail();
-        }).catch(()=> {
-          alert("error");
+        }).catch((jqXHR, textStatus, errorThrown)=> {
+          alert(textStatus);
+          alert(errorThrown);
+          console.log(textStatus);
+          console.log(errorThrown);
           this.notifyPropertyChange('resetCaptcha');
           this.set('errors.captcha', ["Captcha didn't match please try again"]);
         });
