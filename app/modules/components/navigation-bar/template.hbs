@@ -1,20 +1,18 @@
 <div class="row nav-bar">
     <ul class="nav clearfix">
         <li>{{#link-to 'home'}}A \ About me{{/link-to}}</li>
-        {{!--
-        <li>{{#link-to 'albums'}}C \ Snapped{{/link-to}}</li>
-        <li>{{#link-to 'blogs'}}B \ Blog{{/link-to}}</li>--}}
+        <li>{{#link-to 'blog-categories'}}B \ Blog{{/link-to}}</li>
         <li>{{#link-to 'contact'}}D \ Contact{{/link-to}}</li>
 
         <li class="pull-right">
           {{#slide-down-toggler toggleOnHover=true as |section|}}
             {{#if section.head}}
-                <div class="round-bdr-1 pointer-cursor"><img src="assets/images/profile_pic_round.jpg" class="image-48 round"></div>
+                <div class="round-bdr-1 pointer-cursor"><img src="/assets/images/profile_pic_round.jpg" class="image-48 round"></div>
             {{else}}
-                <div class="p-y-1"><a href="http://stackoverflow.com/users/1720349/deewendra-shrestha" target="_blank" class="display-table"><img src="assets/images/stackoverflow-logo-128.png" class="image-48 zoom-on-hover-1"/></a></div>
-                <div class="p-y-1"><a href="https://www.linkedin.com/pub/deewendra-shrestha/22/a77/695" target="_blank" class="display-table"><img src="assets/images/linkedin_circle-128.png" class="image-48 zoom-on-hover-1"/></a></div>
-                <div class="p-y-1"><a href="https://plus.google.com/117229196648088275909/about" target="_blank" class="display-table"><img src="assets/images/google_circle_color-128.png" class="image-48 zoom-on-hover-1"/></a></div>
-                <div class="p-y-1"><a href="https://www.facebook.com/deewendra.shrestha" target="_blank" class="display-table"><img src="assets/images/facebook_circle_color-128.png" class="image-48 zoom-on-hover-1"/></a></div>
+                <div class="p-y-1"><a href="http://stackoverflow.com/users/1720349/deewendra-shrestha" target="_blank" class="display-table"><img src="/assets/images/stackoverflow-logo-128.png" class="image-48 zoom-on-hover-1"/></a></div>
+                <div class="p-y-1"><a href="https://www.linkedin.com/pub/deewendra-shrestha/22/a77/695" target="_blank" class="display-table"><img src="/assets/images/linkedin_circle-128.png" class="image-48 zoom-on-hover-1"/></a></div>
+                <div class="p-y-1"><a href="https://plus.google.com/117229196648088275909/about" target="_blank" class="display-table"><img src="/assets/images/google_circle_color-128.png" class="image-48 zoom-on-hover-1"/></a></div>
+                <div class="p-y-1"><a href="https://www.facebook.com/deewendra.shrestha" target="_blank" class="display-table"><img src="/assets/images/facebook_circle_color-128.png" class="image-48 zoom-on-hover-1"/></a></div>
             {{/if}}
           {{/slide-down-toggler}}
 

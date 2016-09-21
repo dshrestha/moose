@@ -1,0 +1,11 @@
+<div class="m-t-8">
+    <div>
+        <div class="pull-left date-panel">
+            <p>{{moment-format post.createdOn "MMM DD"}}<span>{{moment-format post.createdOn "YYYY"}}</span></p>
+        </div>
+        <h3>{{model.title}}</h3>
+    </div>
+    <div class="content">
+        {{{model.content.content.content}}}
+    </div>
+</div>

@@ -6,10 +6,15 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
+Router.map(function () {
   this.route('home');
   this.route('albums');
-  this.route('blogs');
+  this.route('blog-categories', function () {
+    this.route('blog-category', {path: ':category_id'}, function () {
+      this.route('post', {path: '/posts/:post_id'});
+    });
+
+  });
   this.route('contact');
 });
 

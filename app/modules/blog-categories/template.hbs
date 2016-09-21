@@ -1,0 +1,15 @@
+<div class="clearfix">
+    <div class="col-md-3">
+        <h1 class="grey-dotted-border-bottom">Categories</h1>
+        <ul class="nav nav-pills nav-stacked p-t-3">
+          {{#each model as |category|}}
+              <li class="{{if category.selected "active"}}"><a href="#" {{action "openCategory" category}}>{{category.name}} <span class="badge pull-right">{{category.post-count}}</span></a></li>
+          {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="space-left-md">
+          {{outlet}}
+        </div>
+    </div>
+</div>
