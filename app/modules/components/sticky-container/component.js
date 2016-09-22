@@ -10,7 +10,6 @@ export default Ember.Component.extend({
 
   initialize(){
     this.set('elementOffsetTop', Ember.$(this.get('element')).offset().top);
-    Ember.$(this.get('element')).width(Ember.$(this.get('element')).parent().width());
   },
 
   didInsertElement(){
