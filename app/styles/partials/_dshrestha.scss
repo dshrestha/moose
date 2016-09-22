@@ -3,6 +3,10 @@
   height: $height;
 }
 
+.inner-container {
+  width: inherit;
+}
+
 img {
   &.image-64 {
     @include square-image-size(64px);
@@ -22,7 +26,7 @@ img {
 
   /*Al credit to http://tutorials.jenkov.com/responsive-mobile-friendly-web-design/responsive-images.html*/
   &.responsive {
-    max-width : 100%; /* or max-width : 100% */
+    max-width: 100%; /* or max-width : 100% */
     height: auto;
   }
 }
