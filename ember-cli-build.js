@@ -51,11 +51,16 @@ module.exports = function (defaults) {
     app.import("bower_components/perfect-scrollbar/js/perfect-scrollbar.js");
     app.import("bower_components/perfect-scrollbar/css/perfect-scrollbar.css");
   };
+  var importPrism = function () {
+    app.import("bower_components/prism/prism.js");
+    app.import("bower_components/prism/themes/prism.css");
+  };
 
   importBootstrap();
   importTimeLine();
   importD3();
   importPerfectScrollbar();
+  importPrism();
 
   return app.toTree();
 };

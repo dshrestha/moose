@@ -6,6 +6,8 @@
         <h3>{{model.title}}</h3>
     </div>
     <div class="content">
-        {{{model.content.content.content}}}
+        {{#code-highlighter}}
+          {{{model.content.content.content}}}
+        {{/code-highlighter}}
     </div>
 </div>
