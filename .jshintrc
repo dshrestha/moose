@@ -3,7 +3,10 @@
     "document",
     "window",
     "-Promise",
-    "Ps"
+    "Ps",
+    "Prism",
+    "d3",
+    "TL"
   ],
   "browser": true,
   "boss": true,

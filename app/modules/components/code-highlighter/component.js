@@ -59,7 +59,6 @@ export default Ember.Component.extend({
     Ember.$(this.get('element')).find('code').each(function (index, code) {
       let language = Ember.$(code).attr('language') || 'javascript';
       Prism.highlightElement(code, false, ()=>{});
-      //Ember.$(code).html(Prism.highlight(Ember.$(code).html(), Prism.languages[language]));
     });
   }
 });

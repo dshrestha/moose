@@ -9,11 +9,19 @@ export default Ember.Component.extend({
   stickToTop: false,
 
   initialize(){
-    this.set('elementOffsetTop', Ember.$(this.get('element')).offset().top);
+    let componentDOM = Ember.$(this.get('element'));
+    this.set('elementOffsetTop', componentDOM.offset().top);
+
+    /**
+     * placeholder div that will take the height that the original sticky div will take so that we don't get the jarring
+     * effect when sticky bar becomes sticky
+     * */
+    componentDOM.find('.sticky-placeholder').css('height', componentDOM.height());
   },
 
   didInsertElement(){
     this.initialize();
+
     Ember.$(window).on('scroll', this.orientPosition.bind(this));
     Ember.$(window).on('resize', this.initialize.bind(this));
   },
