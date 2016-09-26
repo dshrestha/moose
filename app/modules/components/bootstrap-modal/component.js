@@ -7,7 +7,9 @@ import Ember from 'ember';
  * */
 export default Ember.Component.extend({
 
-  classNames: ['modal', 'fade'],
+  classNameBindings: [':modal', 'animate:fade'],
+
+  animate: true,
 
   /**
    * Gets all the modal initialization options
