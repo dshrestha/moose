@@ -1,14 +1,13 @@
 {
   "name": "moose",
   "dependencies": {
-    "ember": "~2.7.0",
-    "ember-cli-shims": "0.1.1",
+    "ember": "~2.10.0",
+    "ember-cli-shims": "0.1.3",
     "ember-qunit-notifications": "0.1.0",
     "bootstrap-sass": "~3.3.6",
     "timelineJs": "https://github.com/NUKnightLab/TimelineJS3.git",
     "d3": "~3.5.13",
     "perfect-scrollbar": "~0.6.12",
     "prism": "~1.5.1"
-  },
-  "devDependencies": {}
+  }
 }
