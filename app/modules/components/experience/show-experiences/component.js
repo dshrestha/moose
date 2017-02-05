@@ -14,7 +14,7 @@ export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
-    let selectedExperience = this.get('experiences.firstObject')
+    let selectedExperience = this.get('experiences.firstObject');
     this.set('selectedExperience', selectedExperience);
     this.set('tabs', [{'label': 'Role'}, {
       'label': 'Projects',

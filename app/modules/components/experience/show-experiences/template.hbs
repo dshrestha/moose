@@ -8,9 +8,9 @@
 <div class="col-md-8">
     {{#nav-tabs tabs=tabs onTabClick=(action "onTabClick")}}
         {{#if showRole}}
-            {{experience.show-roles experience=selectedExperience}}
+            {{experience/show-roles experience=selectedExperience}}
         {{else}}
-            {{experience.show-projects experience=selectedExperience}}
+            {{experience/show-projects experience=selectedExperience}}
         {{/if}}
     {{/nav-tabs}}
 </div>

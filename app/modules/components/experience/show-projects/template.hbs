@@ -1,11 +1,11 @@
-{{#accordion.ui-group as |group|}}
+{{#accordion/ui-group as |group|}}
   {{#each experience.projects as |project index|}}
-    {{#accordion.ui-panel groupId=group.elementId headerText=project.name expanded=(check-eq index 0)}}
+    {{#accordion/ui-panel groupId=group.elementId headerText=project.name expanded=(check-eq index 0)}}
         <ul>
           {{#each project.roles as |role|}}
               <li>{{role}}</li>
           {{/each}}
         </ul>
-    {{/accordion.ui-panel}}
+    {{/accordion/ui-panel}}
   {{/each}}
-{{/accordion.ui-group}}
+{{/accordion/ui-group}}
