@@ -1,8 +1,10 @@
 import Ember from 'ember';
-import EmberValidations from 'ember-validations';
+import Changeset from 'ember-changeset';
+import lookupValidator from 'ember-changeset-validations';
+import ContactFormValidations from 'moose/modules/validators/contactForm';
 import config from './../../../config/environment';
 
-export default Ember.Component.extend(EmberValidations, {
+export default Ember.Component.extend({
 
   messageSentSuccess: false,
 
@@ -10,11 +12,14 @@ export default Ember.Component.extend(EmberValidations, {
 
   showErrors: false,
 
-  validations: {
-    'name': {presence: {message: 'Name must not be blank'}},
-    'email': {presence: {message: 'Email address must not be blank'}},
-    'message': {presence: {message: 'Message must not be blank'}},
-    'captcha': {presence: {message: 'Captcha text must not be blank'}}
+  formInputs: null,
+
+  formInputsChangeSet: null,
+
+  didInsertElement(){
+    let formInputs = {'name': null, 'email': null, 'message': null, 'captcha': null};
+    this.set('formInputs', formInputs);
+    this.set('formInputsChangeSet', new Changeset(formInputs, lookupValidator(ContactFormValidations), ContactFormValidations));
   },
 
   captchaImageLink: Ember.computed('resetCaptcha', function () {
@@ -30,12 +35,11 @@ export default Ember.Component.extend(EmberValidations, {
           withCredentials: true
         }
       }).done(()=> {
-        resolve();
-      }).error((jqXHR, textStatus, errorThrown)=> {
+        resolve(true);
+      }).fail((jqXHR, textStatus, errorThrown)=> {
         reject(jqXHR, textStatus, errorThrown);
       });
     });
-
   },
 
   /**
@@ -63,7 +67,7 @@ export default Ember.Component.extend(EmberValidations, {
         }
       }).done(()=> {
         resolve();
-      }).error(()=> {
+      }).fail(()=> {
         reject();
       });
     });
@@ -100,17 +104,21 @@ export default Ember.Component.extend(EmberValidations, {
 
     submitFeedback(){
       this.set('showErrors', true);
-      this.clearValidationErrors();
-      this.validate().then(()=> {
-        this.verifyCaptcha(this.get('captcha')).then(()=> {
-          this.sendEmail();
-        }).catch((jqXHR, textStatus, errorThrown)=> {
-          this.notifyPropertyChange('resetCaptcha');
-          this.set('errors.captcha', ["Captcha didn't match please try again"]);
-        });
+      this.get('formInputsChangeSet').validate().then(()=> {
+        if (this.get('formInputsChangeSet.isValid')) {
+          this.verifyCaptcha(this.get('formInputsChangeSet.captcha')).then(()=> {
+            this.sendEmail();
+          }).catch(()=> {
+            this.get('formInputsChangeSet').addError('captcha', {
+              value: '',
+              validation: "Captcha didn't match please try again"
+            });
+          }).finally(()=> {
+            this.notifyPropertyChange('resetCaptcha');
+          });
+        }
       });
     }
-
   }
 
 
